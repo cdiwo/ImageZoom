@@ -7,7 +7,7 @@
  * 说明：
  * isClip==true，按比例缩放
  * img对象CSS:position:absolute; parent对象display:block,overflow:hidden,width,height
- * 
+ */
 $.fn.ImageZoom = function(params) {
     var iz = this;
 
@@ -29,7 +29,7 @@ $.fn.ImageZoom = function(params) {
         // 缩放后的尺寸
         var scaleWidth = width * h / w; 
         var scaleHeight = height * w / h;
-        
+
         // console.log("w: " + w + ", h: " + h + ", width: " + width + ", height: " + height);
 
         // 初始化元素位置
@@ -69,7 +69,6 @@ $.fn.ImageZoom = function(params) {
     iz.load = function(el, callback) {
         var src = el.attr("src");
         var height = el.height();
-
         // 非IE无法预先获取图片宽高
         if(height == 0) {
             // 提供2种预加载方式
@@ -80,7 +79,6 @@ $.fn.ImageZoom = function(params) {
             } else {
                 var image = new Image();
                 image.src = src;
-                
                 image.onload = function() {
                     callback();
                 }
