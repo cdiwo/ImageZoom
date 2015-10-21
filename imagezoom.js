@@ -29,7 +29,7 @@ var ImageZoom = function(selector, params) {
         // 缩放后的尺寸
         var scaleWidth = width * h / w; 
         var scaleHeight = height * w / h;
-        
+
         // console.log("w:"+w+" h:"+h+" width:"+width+" height:"+height);
 
         // 初始化元素位置
@@ -67,7 +67,6 @@ var ImageZoom = function(selector, params) {
     iz.load = function(el, callback) {
         var src = el.src;
         var height = el.naturalWidth;
-
         // 非IE无法预先获取图片宽高
         if(height == 0) {
             // 提供2种预加载方式
@@ -78,7 +77,6 @@ var ImageZoom = function(selector, params) {
             } else {
                 var image = new Image();
                 image.src = src;
-                
                 image.onload = function() {
                     callback();
                 }
@@ -98,5 +96,5 @@ var ImageZoom = function(selector, params) {
         }
     }
 
-    this.init();
+    iz.init();
 }
